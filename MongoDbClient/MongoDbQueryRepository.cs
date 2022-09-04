@@ -2,7 +2,6 @@
 using MongoDB.Driver;
 using MongoDB.Driver.Linq;
 using System.Linq;
-using UserManagement.Model;
 
 namespace MongoDbClient
 {

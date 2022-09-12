@@ -5,21 +5,23 @@ using System.Collections.Generic;
 
 namespace UserManagement.Persistence
 {
-    public class UserDetail
-    {
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
-        private string _emailId;
-        public string EmailId { get { return _emailId; } set { _emailId = value?.ToLower(); } }
-        public string Name { get; set; }
-        public string Password { get; set; }
-        public string Firstname { get; set; }
-        public string Lastname { get; set; }
-        public bool IsActive { get; set; } = true;
+  public class UserDetail
+  {
+    [BsonId]
+    [BsonRepresentation(BsonType.ObjectId)]
+    public string Id { get; set; }
 
-        public List<string> Roles = new List<string>();
-        public DateTime CreatedTimeStamp { get; set; } = DateTime.UtcNow;
-        public DateTime LastModifiedTimeStamp { get; set; } = DateTime.UtcNow;
-    }
+    private string _emailId;
+    public string EmailId
+    { get { return _emailId; } set { _emailId = value?.ToLower(); } }
+    public string Name { get; set; }
+    public string Password { get; set; }
+    public string Firstname { get; set; }
+    public string Lastname { get; set; }
+    public bool IsActive { get; set; } = true;
+
+    public List<string> Roles = new List<string>();
+    public DateTime CreatedTimeStamp { get; set; } = DateTime.UtcNow;
+    public DateTime LastModifiedTimeStamp { get; set; } = DateTime.UtcNow;
+  }
 }

@@ -12,8 +12,10 @@ namespace UserManagement.Persistence
     public string Id { get; set; }
 
     private string _emailId;
+
     public string EmailId
     { get { return _emailId; } set { _emailId = value?.ToLower(); } }
+
     public string Name { get; set; }
     public string Password { get; set; }
     public string Firstname { get; set; }

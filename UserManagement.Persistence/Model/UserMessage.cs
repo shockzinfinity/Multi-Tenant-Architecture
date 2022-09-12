@@ -10,8 +10,10 @@ namespace UserManagement.Persistence.Model
     public string Id { get; set; }
 
     private string _emailId;
+
     public string EmailId
     { get { return _emailId; } set { _emailId = value?.ToLower(); } }
+
     public string Message { get; set; }
   }
 }

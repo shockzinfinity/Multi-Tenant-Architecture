@@ -96,7 +96,6 @@
       border-bottom-color: $popover-arrow-color;
     }
   }
-
   // This will remove the popover-header's border just below the arrow
   .popover-header::before {
     position: absolute;
@@ -137,17 +136,19 @@
   &[x-placement^="top"] {
     @extend .bs-popover-top;
   }
+
   &[x-placement^="right"] {
     @extend .bs-popover-right;
   }
+
   &[x-placement^="bottom"] {
     @extend .bs-popover-bottom;
   }
+
   &[x-placement^="left"] {
     @extend .bs-popover-left;
   }
 }
-
 
 // Offset the popover to account for the popover arrow
 .popover-header {

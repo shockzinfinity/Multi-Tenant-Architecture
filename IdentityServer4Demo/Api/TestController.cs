@@ -5,14 +5,14 @@ using System.Linq;
 
 namespace IdentityServer4Demo.Api
 {
-    [Route("/api/test")]
-    [Authorize(AuthenticationSchemes = IdentityServerConstants.LocalApi.AuthenticationScheme)]
-    public class TestController : ControllerBase
+  [Route("/api/test")]
+  [Authorize(AuthenticationSchemes = IdentityServerConstants.LocalApi.AuthenticationScheme)]
+  public class TestController : ControllerBase
+  {
+    public IActionResult Get()
     {
-        public IActionResult Get()
-        {
-            var claims = User.Claims.Select(c => new { c.Type, c.Value });
-            return new JsonResult(claims);
-        }
+      var claims = User.Claims.Select(c => new { c.Type, c.Value });
+      return new JsonResult(claims);
     }
+  }
 }

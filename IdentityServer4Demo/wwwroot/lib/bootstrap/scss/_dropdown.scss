@@ -8,7 +8,6 @@
 
 .dropdown-toggle {
   white-space: nowrap;
-
   // Generate the caret automatically
   @include caret();
 }
@@ -77,6 +76,7 @@
 
   .dropdown-toggle {
     @include caret(right);
+
     &::after {
       vertical-align: 0;
     }
@@ -94,6 +94,7 @@
 
   .dropdown-toggle {
     @include caret(left);
+
     &::before {
       vertical-align: 0;
     }
@@ -131,7 +132,6 @@
   white-space: nowrap; // prevent links from randomly breaking onto new lines
   background-color: transparent; // For `<button>`s
   border: 0; // For `<button>`s
-
   // Prevent dropdown overflow if there's no padding
   // See https://github.com/twbs/bootstrap/pull/27703
   @if $dropdown-padding-y == 0 {

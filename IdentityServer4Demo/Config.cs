@@ -3,54 +3,54 @@ using System.Collections.Generic;
 
 namespace IdentityServer4Demo
 {
-    public class Config
+  public class Config
+  {
+    public static IEnumerable<IdentityResource> GetIdentityResources()
     {
-        public static IEnumerable<IdentityResource> GetIdentityResources()
-        {
-            return new List<IdentityResource>
+      return new List<IdentityResource>
             {
                 new IdentityResources.OpenId(),
                 new IdentityResources.Profile(),
                 new IdentityResources.Email(),
             };
-        }
+    }
 
-        public static IEnumerable<ApiScope> GetApiScopes()
-        {
-            return new List<ApiScope>
+    public static IEnumerable<ApiScope> GetApiScopes()
+    {
+      return new List<ApiScope>
             {
                 // backward compat
                 new ApiScope("api"),
-                
+
                 // more formal
                 new ApiScope("api.scope1"),
                 new ApiScope("api.scope2"),
-                
+
                 // scope without a resource
                 new ApiScope("scope2"),
-                
+
                 // policyserver
                 new ApiScope("policyserver.runtime"),
                 new ApiScope("policyserver.management")
             };
-        }
-        
-        public static IEnumerable<ApiResource> GetApis()
-        {
-            return new List<ApiResource>
+    }
+
+    public static IEnumerable<ApiResource> GetApis()
+    {
+      return new List<ApiResource>
             {
                 new ApiResource("api", "Demo API")
                 {
                     ApiSecrets = { new Secret("secret".Sha256()) },
-                    
+
                     Scopes = { "api", "api.scope1", "api.scope2" }
                 }
             };
-        }
+    }
 
-        public static IEnumerable<Client> GetClients()
-        {
-            return new List<Client>
+    public static IEnumerable<Client> GetClients()
+    {
+      return new List<Client>
             {
                 // non-interactive
                 new Client
@@ -126,7 +126,7 @@ namespace IdentityServer4Demo
                     AllowOfflineAccess = true,
                     RefreshTokenUsage = TokenUsage.ReUse,
                     RefreshTokenExpiration = TokenExpiration.Sliding,
-                    
+
                     AccessTokenLifetime = 75
                 },
 
@@ -163,7 +163,7 @@ namespace IdentityServer4Demo
                     AllowOfflineAccess = true,
                     RefreshTokenUsage = TokenUsage.OneTimeOnly,
                     RefreshTokenExpiration = TokenExpiration.Sliding,
-                    
+
                     AccessTokenLifetime = 75
                 },
 
@@ -178,27 +178,27 @@ namespace IdentityServer4Demo
                     AllowOfflineAccess = true,
                     RefreshTokenUsage = TokenUsage.OneTimeOnly,
                     RefreshTokenExpiration = TokenExpiration.Sliding,
-                    
+
                     AllowedScopes = { "openid", "profile", "email", "api", "api.scope1", "api.scope2", "scope2" }
                 },
-                
+
                 // oidc login only
                 new Client
                 {
                     ClientId = "login",
-                    
+
                     RedirectUris = { "https://notused" },
                     PostLogoutRedirectUris = { "https://notused" },
-                    
+
                     AllowedGrantTypes = GrantTypes.Implicit,
                     AllowedScopes = { "openid", "profile", "email" },
                 },
-                
+
                 new Client
                 {
                     ClientId = "hybrid",
                     ClientSecrets = { new Secret("secret".Sha256()) },
-                    
+
                     AllowedGrantTypes = GrantTypes.Hybrid,
                     RequirePkce = false,
 
@@ -209,6 +209,6 @@ namespace IdentityServer4Demo
                     AllowedScopes = { "openid", "profile", "email", "api", "api.scope1", "api.scope2", "scope2" }
                 }
             };
-        }
     }
+  }
 }

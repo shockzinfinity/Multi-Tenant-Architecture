@@ -29,7 +29,6 @@
     outline: 0;
     box-shadow: $btn-focus-box-shadow;
   }
-
   // Disabled comes first so active can properly restyle
   &.disabled,
   &:disabled {
@@ -53,7 +52,6 @@ fieldset:disabled a.btn {
   pointer-events: none;
 }
 
-
 //
 // Alternate buttons
 //
@@ -69,7 +67,6 @@ fieldset:disabled a.btn {
     @include button-outline-variant($value);
   }
 }
-
 
 //
 // Link buttons
@@ -97,10 +94,8 @@ fieldset:disabled a.btn {
     color: $btn-link-disabled-color;
     pointer-events: none;
   }
-
   // No need for an active state here
 }
-
 
 //
 // Button Sizes
@@ -114,7 +109,6 @@ fieldset:disabled a.btn {
   @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-line-height-sm, $btn-border-radius-sm);
 }
 
-
 //
 // Block button
 //
@@ -122,7 +116,6 @@ fieldset:disabled a.btn {
 .btn-block {
   display: block;
   width: 100%;
-
   // Vertically space out multiple block buttons
   + .btn-block {
     margin-top: $btn-block-spacing-y;

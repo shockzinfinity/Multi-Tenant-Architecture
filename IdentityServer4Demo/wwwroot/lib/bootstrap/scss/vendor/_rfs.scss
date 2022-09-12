@@ -84,7 +84,6 @@ $rfs-breakpoint-unit-cache: unit($rfs-breakpoint);
     @else if $fs-unit == "rem" {
       $fs: $fs / ($fs * 0 + 1 / $rfs-rem-value);
     }
-
     // Set default font-size
     @if $rfs-font-size-unit == rem {
       $rfs-static: #{$fs / $rfs-rem-value}rem#{$rfs-suffix};
@@ -95,7 +94,6 @@ $rfs-breakpoint-unit-cache: unit($rfs-breakpoint);
     @else {
       @error "`#{$rfs-font-size-unit}` is not a valid unit for $rfs-font-size-unit. Use `px` or `rem`.";
     }
-
     // Only add media query if font-size is bigger as the minimum font-size
     // If $rfs-factor == 1, no rescaling will take place
     @if $fs > $rfs-base-font-size and $enable-responsive-font-sizes {
@@ -121,7 +119,6 @@ $rfs-breakpoint-unit-cache: unit($rfs-breakpoint);
       // Set the calculated font-size.
       $rfs-fluid: calc(#{$min-width} + #{$variable-width}) #{$rfs-suffix};
     }
-
     // Rendering
     @if $rfs-fluid == null {
       // Only render static font-size if no fluid font-size is available

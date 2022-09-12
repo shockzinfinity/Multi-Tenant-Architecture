@@ -9,7 +9,6 @@
 // Navbar position
 // Navbar themes
 
-
 // Navbar
 //
 // Provide a static navbar from which we expand to create full-width, fixed, and
@@ -22,7 +21,6 @@
   align-items: center;
   justify-content: space-between; // space out brand from logo
   padding: $navbar-padding-y $navbar-padding-x;
-
   // Because flex properties aren't inherited, we need to redeclare these first
   // few properties so that content nested within behave properly.
   %container-flex-properties {
@@ -44,7 +42,6 @@
   }
 }
 
-
 // Navbar brand
 //
 // Used for brand, project, or site names.
@@ -62,7 +59,6 @@
     text-decoration: none;
   }
 }
-
 
 // Navbar nav
 //
@@ -86,7 +82,6 @@
   }
 }
 
-
 // Navbar text
 //
 //
@@ -96,7 +91,6 @@
   padding-top: $nav-link-padding-y;
   padding-bottom: $nav-link-padding-y;
 }
-
 
 // Responsive navbar
 //
@@ -182,7 +176,6 @@
             padding-left: $navbar-nav-link-padding-x;
           }
         }
-
         // For nesting containers, have to redeclare for alignment purposes
         %container-nesting-#{$breakpoint} {
           flex-wrap: nowrap;
@@ -201,7 +194,6 @@
 
         .navbar-collapse {
           display: flex !important; // stylelint-disable-line declaration-no-important
-
           // Changes flex-bases to auto because of an IE10 bug
           flex-basis: auto;
         }
@@ -213,7 +205,6 @@
     }
   }
 }
-
 
 // Navbar themes
 //
@@ -261,6 +252,7 @@
 
   .navbar-text {
     color: $navbar-light-color;
+
     a {
       color: $navbar-light-active-color;
 
@@ -313,6 +305,7 @@
 
   .navbar-text {
     color: $navbar-dark-color;
+
     a {
       color: $navbar-dark-active-color;
 

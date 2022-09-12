@@ -26,14 +26,12 @@
       margin-left: -$input-border-width;
     }
   }
-
   // Bring the "active" form control to the top of surrounding elements
   > .form-control:focus,
   > .custom-select:focus,
   > .custom-file .custom-file-input:focus ~ .custom-file-label {
     z-index: 3;
   }
-
   // Bring the custom file input above the label
   > .custom-file .custom-file-input:focus {
     z-index: 4;
@@ -41,10 +39,14 @@
 
   > .form-control,
   > .custom-select {
-    &:not(:last-child) { @include border-right-radius(0); }
-    &:not(:first-child) { @include border-left-radius(0); }
-  }
+    &:not(:last-child) {
+      @include border-right-radius(0);
+    }
 
+    &:not(:first-child) {
+      @include border-left-radius(0);
+    }
+  }
   // Custom file inputs have more complex markup, thus requiring different
   // border-radius overrides.
   > .custom-file {
@@ -52,11 +54,15 @@
     align-items: center;
 
     &:not(:last-child) .custom-file-label,
-    &:not(:last-child) .custom-file-label::after { @include border-right-radius(0); }
-    &:not(:first-child) .custom-file-label { @include border-left-radius(0); }
+    &:not(:last-child) .custom-file-label::after {
+      @include border-right-radius(0);
+    }
+
+    &:not(:first-child) .custom-file-label {
+      @include border-left-radius(0);
+    }
   }
 }
-
 
 // Prepend and append
 //
@@ -67,7 +73,6 @@
 .input-group-prepend,
 .input-group-append {
   display: flex;
-
   // Ensure buttons are always above inputs for more visually pleasing borders.
   // This isn't needed for `.input-group-text` since it shares the same border-color
   // as our inputs.
@@ -88,9 +93,13 @@
   }
 }
 
-.input-group-prepend { margin-right: -$input-border-width; }
-.input-group-append { margin-left: -$input-border-width; }
+.input-group-prepend {
+  margin-right: -$input-border-width;
+}
 
+.input-group-append {
+  margin-left: -$input-border-width;
+}
 
 // Textual addons
 //
@@ -111,14 +120,12 @@
   background-color: $input-group-addon-bg;
   border: $input-border-width solid $input-group-addon-border-color;
   @include border-radius($input-border-radius);
-
   // Nuke default margins from checkboxes and radios to vertically center within.
   input[type="radio"],
   input[type="checkbox"] {
     margin-top: 0;
   }
 }
-
 
 // Sizing
 //
@@ -164,13 +171,11 @@
   padding-right: $custom-select-padding-x + $custom-select-indicator-padding;
 }
 
-
 // Prepend and append rounded corners
 //
 // These rulesets must come after the sizing ones to properly override sm and lg
 // border-radius values when extending. They're more specific than we'd like
 // with the `.input-group >` part, but without it, we cannot override the sizing.
-
 
 .input-group > .input-group-prepend > .btn,
 .input-group > .input-group-prepend > .input-group-text,

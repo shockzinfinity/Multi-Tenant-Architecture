@@ -5,12 +5,10 @@
 .list-group {
   display: flex;
   flex-direction: column;
-
   // No need to set list-style: none; since .list-group-item is block level
   padding-left: 0; // reset padding because ul and ol
   margin-bottom: 0;
 }
-
 
 // Interactive list items
 //
@@ -21,7 +19,6 @@
   width: 100%; // For `<button>`s (anchors become 100% by default though)
   color: $list-group-action-color;
   text-align: inherit; // For `<button>`s (anchors inherit)
-
   // Hover state
   @include hover-focus() {
     z-index: 1; // Place hover/focus items above their siblings for proper border styling
@@ -35,7 +32,6 @@
     background-color: $list-group-action-active-bg;
   }
 }
-
 
 // Individual list items
 //
@@ -63,7 +59,6 @@
     pointer-events: none;
     background-color: $list-group-disabled-bg;
   }
-
   // Include both here for `<a>`s and `<button>`s
   &.active {
     z-index: 2; // Place active items above their siblings for proper border styling
@@ -81,7 +76,6 @@
     }
   }
 }
-
 
 // Horizontal
 //
@@ -123,7 +117,6 @@
   }
 }
 
-
 // Flush list items
 //
 // Remove borders and border-radius to keep list group items edge-to-edge. Most
@@ -146,7 +139,6 @@
     }
   }
 }
-
 
 // Contextual variants
 //

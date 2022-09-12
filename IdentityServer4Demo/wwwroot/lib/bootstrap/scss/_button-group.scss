@@ -10,12 +10,12 @@
   > .btn {
     position: relative;
     flex: 1 1 auto;
-
     // Bring the hover, focused, and "active" buttons to the front to overlay
     // the borders properly
     @include hover() {
       z-index: 1;
     }
+
     &:focus,
     &:active,
     &.active {
@@ -41,7 +41,6 @@
   > .btn-group:not(:first-child) {
     margin-left: -$btn-border-width;
   }
-
   // Reset rounded corners
   > .btn:not(:last-child):not(.dropdown-toggle),
   > .btn-group:not(:last-child) > .btn {
@@ -58,9 +57,13 @@
 //
 // Remix the default button sizing classes into new ones for easier manipulation.
 
-.btn-group-sm > .btn { @extend .btn-sm; }
-.btn-group-lg > .btn { @extend .btn-lg; }
+.btn-group-sm > .btn {
+  @extend .btn-sm;
+}
 
+.btn-group-lg > .btn {
+  @extend .btn-lg;
+}
 
 //
 // Split button dropdowns
@@ -91,18 +94,15 @@
   padding-left: $btn-padding-x-lg * .75;
 }
 
-
 // The clickable button for toggling the menu
 // Set the same inset shadow as the :active state
 .btn-group.show .dropdown-toggle {
   @include box-shadow($btn-active-box-shadow);
-
   // Show no shadow for `.btn-link` since it has no other button styles.
   &.btn-link {
     @include box-shadow(none);
   }
 }
-
 
 //
 // Vertical button groups
@@ -122,7 +122,6 @@
   > .btn-group:not(:first-child) {
     margin-top: -$btn-border-width;
   }
-
   // Reset rounded corners
   > .btn:not(:last-child):not(.dropdown-toggle),
   > .btn-group:not(:last-child) > .btn {
@@ -134,7 +133,6 @@
     @include border-top-radius(0);
   }
 }
-
 
 // Checkbox and radio options
 //
